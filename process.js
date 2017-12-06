@@ -6,27 +6,29 @@
 
 let process = {
 	menu:function(){
-
-			<audio id="audio_history1">
-				<source src="audio/history1.mp3" type="audio/mp3" />
+	let source_vid = '#';
+		let content = <div>
+		    <iframe src={source_vid} width="100%" height='300px'/>
+			<audio id="audio_song">
+				<source src="audio/song.mp3" type="audio/mp3" />
 			</audio>
-			
-				<h1><a href='front.html' className='imCustomClass' onClick={index.page1}>PSU</a></h1>
-				<h1><a href='history.html' onClick={history.page2}>History</a></h1>
-				<h1><a href='history1.html' onClick={history1.page3}>History1</a></h1>
-				<h1><a href='vision.html' onClick={vision.page4}>Vision</a></h1>
-				<h1><a href='mission.html' onClick={mission.page5}>Mission</a></h1>
-				<h1><a href='core.html' onClick={core.page6}>Core Values</a></h1>
-				<h1><a href='Quality.html' onClick={Quality.page7}>Quality</a></h1>
-				<h1><a href='song.html' onClick={song.page8}>PSU Hymn</a></h1>
-			
+			<center>
+				<h1><a href='front.html' onClick={process.page1}>PSU</a></h1>
+				<h1><a href='history.html' onClick={process.page2}>History</a></h1>
+				<h1><a href='history1.html' onClick={process.page3}>Presidents of PSU</a></h1>
+				<h1><a href='vision.html' onClick={process.page4}>Vision</a></h1>
+				<h1><a href='mission.html' onClick={process.page5}>Mission</a></h1>
+				<h1><a href='core.html' onClick={process.page6}>Core Values</a></h1>
+				<h1><a href='Quality.html' onClick={process.page7}>Quality Policy</a></h1>
+				<h1><a href='song.html' onClick={process.page8}>PSU Hymn</a></h1>
+			</center>
 		</div>;
 		ReactDOM.render(content,document.getElementById('root'));
 	},
 	page1:function(){
 		process.audio('audio_bomb').play();
 		let content = <div>
-				this is page 1<br/><a href='front.html' onClick={process.menu}>back</a>
+				this is page 1<br/><a href='front.html' onClick={process.front}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio_bomb').pause();
@@ -34,15 +36,16 @@ let process = {
 	page2:function(){
 		process.audio('audio_History').play();
 		let content = <div>
-				this is page 2<br/><a href='history.html' onClick={process.menu}>back</a>
+				this is page 2<br/><a href='history.html' onClick={process.History}>back</a>
 			</div>;
+
 			ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio_History').pause();
 	},
 	page3:function(){
 		process.audio('audio_History1').play();
 		let content = <div>
-				this is page 3<br/><a href='history1.html' onClick={process.menu}>back</a>
+				this is page 3<br/><a href='history1.html' onClick={process.history1}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio_History1').pause();
@@ -50,7 +53,7 @@ let process = {
 	page4:function(){
 		process.audio('audio_Vision').play();
 		let content = <div>
-				this is page 4<br/><a href='vision.html' onClick={process.menu}>back</a>
+				this is page 4<br/><a href='vision.html' onClick={process.vision}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio_Vision').pause();
@@ -58,7 +61,7 @@ let process = {
 	page5:function(){
 		process.audio('audio_Mission').play();
 		let content = <div>
-				this is page 4<br/><a href='mission.html' onClick={process.menu}>back</a>
+				this is page 4<br/><a href='mission.html' onClick={process.mission}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio_Mission').pause();
@@ -66,7 +69,7 @@ let process = {
 	page6:function(){
 		process.audio('audio_Core').play();
 		let content = <div>
-				this is page 4<br/><a href='core.html' onClick={process.menu}>back</a>
+				this is page 4<br/><a href='core.html' onClick={process.core}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio_Core').pause();
@@ -74,32 +77,32 @@ let process = {
 	page7:function(){
 		process.audio('audio_Quality').play();
 		let content = <div>
-				this is page 4<br/><a href='quality.html' onClick={process.menu}>back</a>
+				this is page 4<br/><a href='Quality.html' onClick={process.Quality}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio_Quality').pause();
 	},page8:function(){
 		process.audio('audio_song').play();
 		let content = <div>
-				this is page 4<br/><a href='song.html' onClick={process.menu}>back</a>
+				this is page 4<br/><a href='song.html' onClick={process.song}>back</a>
 			</div>;
 			ReactDOM.render(content,document.getElementById('root'));
 		process.audio('audio_song').pause();
 	},
 	loading:function(){
 		let content = <div>
+
 					<div className="progressbar-infinite color-multi"></div>
 					<audio id="audio">
 						<source src="audio/song.mp3" type="audio/mp3" />
 					</audio>
 					<div align='center'>
-						<img src='img/psu.png' width='100px' />
-					<center>	Loading...</center>
+						<img src='img/psu.png' width='300px' />
+						<center>Loading...</center>
 					</div>
 				</div>;
 		ReactDOM.render(content,document.getElementById('root'));
-		process.audio('audio').play();
-		process.replayAudio('audio');
+		
 	},
 	audio:function(audio){
 		let _audio = document.getElementById(audio);
